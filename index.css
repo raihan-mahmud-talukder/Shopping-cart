@@ -80,3 +80,19 @@ main {
     opacity: 1;
     padding: 0.5rem 0;
 }
+
+article {
+    padding: 3vmax;
+}
+
+.product-header {
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 75vmax;
+    margin: auto;
+    border-bottom: 0.5rem solid darkgray;
+}
+
+#products {
+    width: 100%;
+}
