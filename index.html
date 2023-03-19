@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100;400&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="index.css">
     <title>Shopping Cart</title>
 </head>
@@ -12,7 +14,7 @@
         <nav>
             <h1>SHOP</h1>
             <ul>
-                <li><a href="cart.html">CART</a><span>0</span></li>
+                <li>CART<span>0</span></li>
                 <li><a href="index.html">HOME</a></li>
             </ul>
         </nav>
@@ -67,6 +69,15 @@
             <a class="add-cart cart8" href="#">Add to Cart</a>
         </div>
     </main>
-    <script src="index.js"></script>
+    <aside>
+        <div class="product-header">
+            <h5 class="product-title">PROUDCT</h5>
+            <h5 class="price">PRICE</h5>
+            <h5 class="quantity">QUANTITY</h5>
+            <h5 class="total">TOTAL</h5>
+        </div>
+        <div id="products"></div>
+    </aside>
+    <script type="module" src="index.js"></script>
 </body>
 </html>
