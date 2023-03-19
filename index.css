@@ -128,7 +128,7 @@ aside {
 }
 
 .remove,
-.change {
+.decrease, .increase {
     color: blue;
     font-weight: bolder;
     cursor: pointer;
@@ -146,3 +146,4 @@ aside {
 .total {
     width: 10%;
 }
+

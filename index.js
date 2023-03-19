@@ -52,19 +52,29 @@ const products = [
 let cart = 0
 const cartNumber = document.getElementsByTagName('li')[0].getElementsByTagName('span')[0]
 
+const cartProduct = []
+
 let carts = document.querySelectorAll('.add-cart')
 for (let i = 0; i < carts.length; i++) {
     carts[i].addEventListener('click', () => {
-        // console.log(products[i])
-        addToCart(products[i])
-        cart++
-        // console.log(cart);
+        if (!(cartProduct.includes(products[i]))) {
+            cartProduct.push(products[i])
+            products[i].inCart++
+            addToCart(products[i])
+            cart++
+        } else {
+            // products[i].inCart++
+            console.log(products[i].inCart);
+            alert('Product has been Already added to the cart!')
+        }
+        // console.log(products[i], cart)
         cartNumber.innerHTML = `(${cart})`
     })
 }
 
+const productsCart = document.getElementById('products')
+const basketTotal = document.getElementById('basket')
 
-let productsCart = document.getElementById('products')
 const addToCart = product => {
     productsCart.innerHTML +=
         `<div id='products'>
@@ -75,34 +85,50 @@ const addToCart = product => {
             </div>
             <span class='price'>${product.price}</span>
             <div class='quantity'>
-                <span class='change'> << </span>
-                <span>${product.inCart}</span>
-                <span class='change'> >> </span>
+                <span class='decrease'> << </span>
+                <span class='cart'>${product.inCart}</span>
+                <span class='increase'> >> </span>
             </div>
             <span class='total'>${product.price * product.inCart}</span>
-        </div>
+            </div>
+            `
+    basketTotal.innerHTML +=
     `
-    // productsCart.innerHTML +=
-    // `
-    // <div class='basket'>
-    // <h4>Basket Total</h4>
-    // <h4>Total Cost ${product.price}</h4>
-    // </div>
-    // `
+    <div class='basket'>
+    <h4>Basket Total</h4>
+    <h4>Total Cost ${product.price}</h4>
+    </div>
+    `
 
-    
-
-
-    let productList = document.querySelectorAll('.remove')
-    // console.log(productList.length)
-
-    const removeProduct = event => {
-        event.target.parentElement.parentElement.remove()
-        cart--
-        cartNumber.innerHTML = `(${cart})`
-    }
+    const productList = document.querySelectorAll('.remove')
+    const decreaseProduct = document.querySelectorAll('.decrease')
+    const increaseProduct = document.querySelectorAll('.increase')
 
     for (let i = 0; i < productList.length; i++) {
-        productList[i].addEventListener('click', removeProduct)
+        productList[i].addEventListener('click', event => {
+            event.target.parentElement.parentElement.remove()
+            cart -= cartProduct[i].inCart
+            cartNumber.innerHTML = `(${cart})`
+        })
+        decreaseProduct[i].addEventListener('click', event => {
+            if (cartProduct[i].inCart === 1) {
+                alert('Product quanity is minimum!')
+            } else {
+                cart--
+                cartProduct[i].inCart--
+                cartNumber.innerHTML = `(${cart})`
+                event.target.nextElementSibling.innerHTML = cartProduct[i].inCart
+                event.target.parentElement.nextElementSibling.innerHTML = cartProduct[i].inCart * cartProduct[i].price
+                console.log(cartProduct[i]);
+            }
+        })
+        increaseProduct[i].addEventListener('click', event => {
+            cart++
+            cartProduct[i].inCart++
+            cartNumber.innerHTML = `(${cart})`
+            event.target.previousElementSibling.innerHTML = cartProduct[i].inCart
+            event.target.parentElement.nextElementSibling.innerHTML = cartProduct[i].inCart * cartProduct[i].price
+            console.log(cartProduct[i]);
+        })
     }
 }
