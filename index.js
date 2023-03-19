@@ -49,13 +49,20 @@ const products = [
     }
 ]
 
+let cart = 0
+const cartNumber = document.getElementsByTagName('li')[0].getElementsByTagName('span')[0]
+
 let carts = document.querySelectorAll('.add-cart')
 for (let i = 0; i < carts.length; i++) {
     carts[i].addEventListener('click', () => {
-        console.log(products[i])
+        // console.log(products[i])
         addToCart(products[i])
+        cart++
+        // console.log(cart);
+        cartNumber.innerHTML = `(${cart})`
     })
 }
+
 
 let productsCart = document.getElementById('products')
 const addToCart = product => {
@@ -83,12 +90,16 @@ const addToCart = product => {
     // </div>
     // `
 
+    
+
 
     let productList = document.querySelectorAll('.remove')
-    console.log(productList.length)
+    // console.log(productList.length)
 
     const removeProduct = event => {
         event.target.parentElement.parentElement.remove()
+        cart--
+        cartNumber.innerHTML = `(${cart})`
     }
 
     for (let i = 0; i < productList.length; i++) {
