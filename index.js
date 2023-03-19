@@ -82,4 +82,16 @@ const addToCart = product => {
     // <h4>Total Cost ${product.price}</h4>
     // </div>
     // `
+
+
+    let productList = document.querySelectorAll('.remove')
+    console.log(productList.length)
+
+    const removeProduct = event => {
+        event.target.parentElement.parentElement.remove()
+    }
+
+    for (let i = 0; i < productList.length; i++) {
+        productList[i].addEventListener('click', removeProduct)
+    }
 }
