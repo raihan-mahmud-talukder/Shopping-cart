@@ -12,6 +12,10 @@ nav {
     align-items: center;
 }
 
+nav h1 {
+    color: blue;
+}
+
 ul {
     display: flex;
     justify-content: space-between;
@@ -128,7 +132,8 @@ aside {
 }
 
 .remove,
-.decrease, .increase {
+.decrease,
+.increase {
     color: blue;
     font-weight: bolder;
     cursor: pointer;
@@ -147,3 +152,19 @@ aside {
     width: 10%;
 }
 
+#basket {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1vmax;
+    color: blue;
+}
+
+#basket :first-child {
+    width: 90%;
+    text-align: right;
+}
+
+#basket :last-child {
+    width: 10%;
+    text-align: center;
+}
