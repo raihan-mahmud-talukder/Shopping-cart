@@ -25,19 +25,19 @@ ul {
 li {
     list-style-type: none;
     background: blue;
-    padding: 0.5rem;
+    padding: 0.5rem 0;
     color: white;
 }
 
 a {
     text-decoration: none;
-    padding: 1rem;
+    padding: 0 1rem;
     color: white;
 }
 
 li span {
     color: white;
-    padding: 1rem;
+    padding: 0 1rem;
 }
 
 img {
