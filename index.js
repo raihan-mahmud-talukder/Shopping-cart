@@ -124,6 +124,8 @@ const addToCart = product => {
             basketTotal -= cartProduct[i].total
             basket.innerHTML = basketTotal
             cartNumber.innerHTML = `(${cart})`
+            console.log(basketTotal)
+            
         })
         decreaseProduct[i].addEventListener('click', event => {
             if (cartProduct[i].inCart === 1) {

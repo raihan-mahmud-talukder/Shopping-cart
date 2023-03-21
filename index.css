@@ -5,11 +5,12 @@ body {
 
 header {
     position: relative;
-    height: 7vmax;
+    height: 5vmax;
 }
 
 nav {
     background: lightgray;
+
     padding: 0 1vmax;
     display: flex;
     justify-content: space-between;
@@ -52,8 +53,6 @@ li span {
 
 img {
     width: 20vmax;
-    /* border: 1px solid blue; */
-    /* box-shadow: 2px 2px 5px blue; */
 }
 
 main {
@@ -75,12 +74,18 @@ main {
     display: flex;
     flex-direction: column;
     position: relative;
+    /* border: 1px solid blue; */
+    box-shadow: 2px 2px 5px blue;
 }
 
 .image h3,
 .image h5 {
     margin: 0;
     padding: 0.5vmin;
+}
+
+.image h5 {
+    color: blue;
 }
 
 .add-cart {
@@ -179,4 +184,12 @@ aside {
 #basket :last-child {
     width: 10%;
     text-align: center;
+}
+
+footer {
+    padding: 1vmax;
+    background: rgb(0, 0, 255, 0.1);
+    text-align: center;
+    font-family: 'Lora', serif;
+    font-size: 1.00rem;
 }
