@@ -108,7 +108,7 @@ const addToCart = product => {
         </div>
         `
 
-    const table = document.getElementById('products').querySelectorAll('#products')
+    // const table = document.getElementById('products').querySelectorAll('#products')
     const productList = document.querySelectorAll('.remove')
     const decreaseProduct = document.querySelectorAll('.decrease')
     const increaseProduct = document.querySelectorAll('.increase')

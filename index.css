@@ -3,13 +3,23 @@ body {
     font-family: 'Exo 2';
 }
 
+header {
+    position: relative;
+    height: 7vmax;
+}
+
 nav {
     background: lightgray;
-    padding: 1vmax;
+    padding: 0 1vmax;
     display: flex;
     justify-content: space-between;
     font-size: 1.5rem;
     align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
 }
 
 nav h1 {
@@ -25,23 +35,25 @@ ul {
 li {
     list-style-type: none;
     background: blue;
-    padding: 0.5rem 0;
+    padding: 0.5rem 0.5rem;
     color: white;
 }
 
 a {
     text-decoration: none;
-    padding: 0 1rem;
+    padding: 0 0.5rem;
     color: white;
 }
 
 li span {
     color: white;
-    padding: 0 1rem;
+    padding: 0 0.5rem;
 }
 
 img {
     width: 20vmax;
+    /* border: 1px solid blue; */
+    /* box-shadow: 2px 2px 5px blue; */
 }
 
 main {
