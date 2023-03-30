@@ -172,7 +172,7 @@ aside {
 #basket {
     display: flex;
     justify-content: flex-end;
-    gap: 1vmax;
+    /* gap: 1vmax; */
     color: blue;
 }
 
