@@ -85,6 +85,8 @@ const getCart = () => {
 
 let cart = getCart()
 let cartProduct = getLocalCartData()
+const cartNumber = document.getElementsByTagName('li')[0].getElementsByTagName('span')[0]
+cartNumber.innerHTML = `(${cart})`
 
 let carts = document.querySelectorAll('.add-cart')
 for (let i = 0; i < carts.length; i++) {
@@ -103,11 +105,10 @@ for (let i = 0; i < carts.length; i++) {
     })
 }
 
-const cartNumber = document.getElementsByTagName('li')[0].getElementsByTagName('span')[0]
 
 const displayCart = () => {
     const productsCart = document.getElementById('products')
-    cartNumber.innerHTML = `(${JSON.parse(localStorage.getItem('cart'))})`
+    cartNumber.innerHTML = `(${cart})`
     if (cartProduct && productsCart) {
         productsCart.innerHTML = ''
         Object.values(cartProduct).map(product => {
